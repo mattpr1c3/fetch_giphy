@@ -5,6 +5,9 @@ const countryCode = "US"
 const limit = "5"
 const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName},${state},${countryCode}&limit=${limit}&appid=${apiKey}`
 
-function getCityWeather() {
-    fetch()
+async function getCityWeather() {
+    let res = await fetch(geoUrl);
+    let data = await res.json();
+    console.log(data)
 }
+getCityWeather();
